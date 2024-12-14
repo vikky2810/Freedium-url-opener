@@ -1,6 +1,10 @@
 # Freedium-url-opener
 It's Open the premium medium pages into free readble content .. Enjoy !!
 
+It made by reader to a readers.. 🤓
+![jVo](https://github.com/user-attachments/assets/670dac3e-6677-4797-8ff0-251036d75fa7)
+
+
 ## Features
 
 - Quickly open any URL in a new tab.
