@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Opener</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header {
+            margin-bottom: 25px;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 24px;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            margin-top: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: #34495e;
+            text-align: left;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            flex-grow: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+        }
+
+        .btn-secondary {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+        }
+
+        .btn-secondary:hover {
+            background-color: #dfe4e6;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            margin-top: 15px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>URL Opener</h1>
+            <p>Open any article through Freedium</p>
+        </div>
+        
+        <form id="urlForm">
+            <div class="form-group">
+                <label for="url">Enter URL:</label>
+                <input 
+                    type="url" 
+                    id="url" 
+                    class="form-control" 
+                    placeholder="https://example.com/article" 
+                    required
+                >
+            </div>
+            
+            <div class="btn-group">
+                <button 
+                    type="submit" 
+                    class="btn btn-primary"
+                >
+                    Open in Freedium
+                </button>
+                <button 
+                    type="button" 
+                    id="pasteButton"
+                    class="btn btn-secondary"
+                >
+                    Paste
+                </button>
+            </div>
+        </form>
+        
+        <div id="errorMessage" class="error-message">
+            Please enter a valid URL
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('urlForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const urlInput = document.getElementById('url');
+            const errorMessage = document.getElementById('errorMessage');
+            const url = urlInput.value.trim();
+            
+            try {
+                new URL(url);
+                const prefixedUrl = `https://freedium.cfd/${url}`;
+                window.open(prefixedUrl, '_blank');
+                urlInput.value = ''; // Clear input after successful open
+                errorMessage.style.display = 'none';
+            } catch {
+                errorMessage.style.display = 'block';
+                urlInput.focus();
+            }
+        });
+
+        // Paste button functionality
+        document.getElementById('pasteButton').addEventListener('click', async function() {
+            try {
+                const text = await navigator.clipboard.readText();
+                document.getElementById('url').value = text;
+            } catch (err) {
+                alert('Failed to paste: ' + err);
+            }
+        });
+    </script>
+</body>
+</html>
