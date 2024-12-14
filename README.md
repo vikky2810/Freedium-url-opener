@@ -1,2 +1,19 @@
 # Freedium-url-opener
 It's Open the premium medium pages into free readble content .. Enjoy !!
+
+## Features
+
+- Quickly open any URL in a new tab.
+- No need to copy-paste links like a caveman.
+- Super easy to use, just enter and go!
+
+## How to Use
+
+1. Enter a URL in the input field.
+2. Hit the "Open" button.
+3. The page will open in a new tab for your reading pleasure!
+
+## Contributing
+
+Feel free to submit issues or pull requests if you have suggestions for improvements. Any help is appreciated!
+
