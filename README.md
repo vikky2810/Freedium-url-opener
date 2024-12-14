@@ -1,6 +1,7 @@
 # Freedium-url-opener
 It's Open the premium medium pages into free readble content .. Enjoy !!
-Here is the LINK : freedium-url-opener.vercel.app
+
+Here is the LINK : https://freedium-url-opener.vercel.app
 
 It made by reader to a readers.. 🤓
 
