@@ -4,9 +4,10 @@ It's Open the premium medium pages into free readble content .. Enjoy !!
 
 <p align="center">
   <a href="#">
-      <img src="https://api.visitorbadge.io/api/VisitorHit?user=vikky2810&repo=github-visitors-badge&countColor=%237B1E7A" />
+      <img src="https://api.visitorbadge.io/api/VisitorHit?user=vikky2810&repo=https://github.com/vikky2810/Freedium-url-opener.git&countColor=%231824c9" />
    </a>
 </p>
+
 
 Here is the LINK : https://freedium-url-opener.vercel.app
 
