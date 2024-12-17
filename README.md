@@ -1,6 +1,13 @@
 # Freedium-url-opener
 It's Open the premium medium pages into free readble content .. Enjoy !!
 
+
+<p align="center">
+  <a href="#">
+      <img src="https://api.visitorbadge.io/api/VisitorHit?user=vikky2810&repo=github-visitors-badge&countColor=%237B1E7A" />
+   </a>
+</p>
+
 Here is the LINK : https://freedium-url-opener.vercel.app
 
 It made by reader to a readers.. 🤓
